@@ -58,3 +58,22 @@ div.case-study-images img{
     border: 1px solid #dddddd;
 }
 
+.featured-work h4 {
+    text-align: center; 
+    margin-bottom: 50px;
+}
+.homepage-featured-work {
+    text-align: center;
+}
+.featured-work li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 0 0 10px;
+}
+
+.case-study .services {
+    color: #b1b1b1;
+    font-size: 14px;
+    margin: 10px 0 20px 0;
+}
+   
