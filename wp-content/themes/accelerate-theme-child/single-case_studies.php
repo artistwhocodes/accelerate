@@ -1,3 +1,4 @@
+ 
 <?php
 /**
  * The template for displaying case studies
@@ -49,3 +50,5 @@ get_header(); ?>
 </div><!-- #primary -->
  
 <?php get_footer(); ?>
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

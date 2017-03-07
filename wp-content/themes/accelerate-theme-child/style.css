@@ -16,11 +16,37 @@
 #masthead { background: none repeat scroll 0 0 #45ac9d; }
 .button { background: none repeat scroll 0 0 #45ac9d; }
 
-#masthead nav ul li{ float: left; margin-top: -20px;}
+#masthead nav ul li{     float: left; margin: -20px 10px 0 10px;}
+
+
+#about .home-page {
+    background: url("img/taxi-photo.jpg") no-repeat scroll left bottom / cover rgba(0, 0, 0, 0); 
+}
+#about .home-page { height: 140px; color: #fff;}
+#about .home-page h3 {  padding: 0 24%; line-height: 34px;}
+
+.bluish { color: #45ac9d;}
+.contact #content {
+  padding: 10px 15%; 
+}
+.field-wrap input[type="button"] {
+    color: white;
+    font-family: "montserrat";
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px 70px;
+    background: none repeat scroll 0 0 #45ac9d;
+    text-align: center;
+    right: 0px;
+    position: absolute;
+}
+.textbox-container, .email-container { display: inline-block; width: 49%;}
 
 
 .blog-post {
-	width: 50%;
+    width: 45%;
+    margin-right: 10%;
+    float: left;
 }
 .blog-post h4 {
 	font-size: 16px;
@@ -39,6 +65,41 @@
 	font-weight: bold;
 	color: #45ac9d;
 	text-transform: uppercase;
+}
+.twitter-post {
+	width: 45%;
+    float: right;
+}
+.twitter-post h4 {
+	font-size: 16px;
+	font-family: 'Montserrat';
+	color: #a6a6a6;
+	text-transform: uppercase;
+    float: left;
+    margin-bottom: 36px;
+}
+.twitter-post h2 {
+    font-size: 24px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: #3b3b3b;
+    margin: 36px 0 12px;
+}
+.twitter-post .read-more-link {
+	font-size: 24px;
+	font-family: 'Montserrat';
+	font-weight: bold;
+	color: #45ac9d;
+	text-transform: uppercase;
+}
+.tweets {
+    margin: 0px;
+    list-style: none;
+    color: #3b3b3b;
+    font: 17px/1.65 'open sans', Arial, sans-serif;
+}
+.twitter-post .widget {
+    padding: 0px;
 }
 /*Case Studies */
 article.case-study {
@@ -76,4 +137,111 @@ div.case-study-images img{
     font-size: 14px;
     margin: 10px 0 20px 0;
 }
+
+/*About Work */
+article.about-work {
+    padding: 0 2%;
+} 
+aside.about-work-sidebar { 
+    margin: 20px 20px 120px 20px;
+}
+aside.about-work-footer { 
+    padding: 6%;
+    text-align: center;
+    border-top: 1px solid #e3e1e1; 
+}
+aside.about-work-footer h2 { 
+    margin: 0 40px;
+    display: inline-block;
+}
+.para , .para_02 , .para_03 , .para_04 , .para_05 { 
+    width: 70%;
+    display: inline-block;
+} 
+.alignright { float: right; margin: 0 0 0 40px;}
+.alignleft { float: left; margin: 0 40px 0 0;}
+aside.about-work-sidebar h2{
+    margin: 0 0 20px;
+}
+div.about-work-images-left{  
+     float: left;
+}
+div.about-work-images-right{  
+     float: right;
+} 
+div.about-work-images  { 
+    display: inline-block;
+    vertical-align: top;
+} 
+.page-template-about .site-footer .site-info {
+    margin-top: 0px;  
+    border-top: 1px solid #e3e1e1;
+}
+.page-template-about .site-footer {
+    margin: 0px auto;
+}
+/* home-page */
+.featured-work h4 {
+    text-align: center; 
+    margin-bottom: 50px;
+}
+.homepage-featured-work {
+    text-align: center;
+}
+.featured-work li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 0 0 10px;
+}
+
+.case-study .services {
+    color: #b1b1b1;
+    font-size: 14px;
+    margin: 10px 0 20px 0;
+}
    
+/*** 404 ***/
+.halfTop {
+  z-index:9999999999999999999999999999999999999999999999999999;
+  width: 100%;
+  top: 0%;
+  height: 50vh;
+  background-color: #181818;
+ 
+  position: absolute;
+  border-bottom: 2px solid #45ac9d;
+  animation: pulse 5s 3s linear forwards;
+}
+
+.halfBottom {
+  width: 100%;
+  bottom: 0px;
+  height: 50vh;
+  background-color: #181818;
+  position: absolute;
+ z-index:9999999999999999999999999999999999999999999999999999;
+  border-top: 2px solid #45ac9d;
+  animation: pulse 5s 3s linear forwards;}
+ 
+  
+ 
+@keyframes pulse {
+  0% {
+    height: 50vh;
+    background-color: #001F3F;
+  }
+  100% {
+    height: 0vh;
+    background-color: #00d9e8;
+  }
+}
+ 
+
+.text-primary{
+    margin-top: 45vh;
+    margin-left:40vw;
+    z-index:0;
+    color:#000;
+    font-size:5em;
+    font-family:'Rock Salt', cursive;  
+}

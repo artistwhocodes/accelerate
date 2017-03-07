@@ -26,7 +26,10 @@
  */
 
 function create_custom_post_types() {
-    register_post_type( 'case_studies',
+ 
+    
+ 
+        register_post_type( 'case_studies',
         array(
             'labels' => array(
                 'name' => __( 'Case Studies' ),
@@ -40,3 +43,32 @@ function create_custom_post_types() {
 }
 add_action( 'init', 'create_custom_post_types' );
 
+
+
+add_filter( 'body_class','accelerate_body_classes' );
+function accelerate_body_classes( $classes ) {
+ 
+  if (is_page('contact-us') ) {
+    $classes[] = 'contact';
+  }
+    return $classes;
+     
+}
+
+
+ function accelerate_theme_child_widget_init() {
+	
+	register_sidebar( array(
+	    'name' =>__( 'Homepage sidebar', 'accelerate-theme-child'),
+	    'id' => 'sidebar-2',
+	    'description' => __( 'Appears on the static front page template', 'accelerate-theme-child' ),
+	    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</aside>',
+	    'before_title' =>  '<h4 class="twitter-post">recent tweets</h4> <h2 class="widget-title">',
+	    'after_title' => '</h2>',   
+	) );
+	
+}
+add_action( 'widgets_init', 'accelerate_theme_child_widget_init' );
+ 
+ 
