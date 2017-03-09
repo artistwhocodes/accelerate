@@ -14,12 +14,16 @@
 
 get_header(); ?>
 
- 	 
-             
-            <h1 class="text-primary"> This page doesn't exist. </h1> 
-            <div class="halfTop"></div>
-            <div class="halfBottom"></div>
-
+    <div class="site-content">
+        <h1 class="four-oh-four">
+            <p>404</p>  
+            <p>This page doesn't exist.</p> 
+        </h1>
+    </div>
+          
+        <div class="halfTop"></div>
+        <div class="halfBottom"></div>
+     
 	 
  
 <?php get_footer(); ?>

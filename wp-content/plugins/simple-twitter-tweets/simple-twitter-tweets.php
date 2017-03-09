@@ -376,7 +376,7 @@ class PI_SimpleTwitterTweets extends WP_Widget{
 
 		if (!empty($PI_title))
 			echo $before_title . $PI_title . $after_title;
-
+             
 			// START WIDGET CODE HERE
 			?>
 

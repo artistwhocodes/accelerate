@@ -41,7 +41,7 @@ get_header(); ?>
                  }   
                   if($image_3) {  
                     echo wp_get_attachment_image( $image_3, $size );
-                } 
+                }  
             ?> 
         </div> 
     </article>
@@ -50,5 +50,4 @@ get_header(); ?>
 </div><!-- #primary -->
  
 <?php get_footer(); ?>
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
+ 

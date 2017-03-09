@@ -44,10 +44,27 @@ get_header(); ?>
             <?php endwhile; ?> 
             <?php wp_reset_query(); ?>
         </ul>   
+        
+        
+         <h4>Our services</h4>    
+        <ul class="homepage-featured-work"> 
+            <?php query_posts('posts_per_page=4&post_type=our_services'); ?>
+                <?php while ( have_posts() ) : the_post(); 
+                    $image_01 = get_field("image_01");
+                    $size = "medium";
+                ?>
+                <li class="indivdual-featured-work"> 
+                    <figure>
+                        <?php echo wp_get_attachment_image($image_01, $size); ?>
+                    </figure>
+                    <h5><a class="read-more-link" href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </h5> 
+                </li>
+            <?php endwhile; ?> 
+            <?php wp_reset_query(); ?>
+        </ul>   
+        
     </div>
-</section>
-
-
+</section> 
 
 <section class="recent-posts">
  <div class="site-content">
@@ -67,11 +84,11 @@ get_header(); ?>
         <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
             <div id="secondary" class="widget-area" role="complementary">
                 <?php dynamic_sidebar( 'sidebar-2' ); ?>
-                 <a class="read-more-link" href="<?php the_permalink(); ?>">Follow us <span>&rsaquo;</span></a>
+                 <a class="read-more-link" href="<?php echo get_twitter_handle(); ?>"> Follow Us <span>&rsaquo;</span></a>
             </div>
          
          <?php endif; ?>  
-    </div>
+    </div> 
   </div>
     
 </section>

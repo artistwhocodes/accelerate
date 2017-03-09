@@ -40,6 +40,17 @@ function create_custom_post_types() {
             'rewrite' => array( 'slug' => 'case-studies' ),
         )
     );
+      register_post_type( 'our_services',
+        array(
+            'labels' => array(
+                'name' => __( 'Our Services' ),
+                'singular_name' => __( 'Our Services' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'our-services' ),
+        )
+    );
 }
 add_action( 'init', 'create_custom_post_types' );
 
@@ -61,14 +72,38 @@ function accelerate_body_classes( $classes ) {
 	register_sidebar( array(
 	    'name' =>__( 'Homepage sidebar', 'accelerate-theme-child'),
 	    'id' => 'sidebar-2',
-	    'description' => __( 'Appears on the static front page template', 'accelerate-theme-child' ),
+	    'description' => __( 'Twitter widget', 'accelerate-theme-child' ),
 	    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	    'after_widget' => '</aside>',
-	    'before_title' =>  '<h4 class="twitter-post">recent tweets</h4> <h2 class="widget-title">',
-	    'after_title' => '</h2>',   
+	    'before_title' =>  '<h4 class="widget-title">',
+	    'after_title' => '</h4>',   
+        
 	) );
 	
 }
 add_action( 'widgets_init', 'accelerate_theme_child_widget_init' );
  
+ // Hook into Simple Twitter Tweets widget on Front page and dynamically add handle after title-tag
+function add_twitter_handle( $title ) {
+		// Fetch handle that is stored in options table but not output by STT widget
+    	$stt_options = get_option( 'widget_pi_simpletwittertweets' );
+			$twitter_handle = $stt_options[2]['name'];
+			if ( !is_front_page() ) {
+				return $title;
+			}
+    	return $title .= '<h2>@'. $twitter_handle . '</h2>';
+		}
+add_filter('widget_title', 'add_twitter_handle'); 
+
+function get_twitter_handle( $url ) {
+		// Fetch handle that is stored in options table but not output by STT widget
+    	$stt_options = get_option( 'widget_pi_simpletwittertweets' );
+			$twitter_handle = $stt_options[2]['name'];
+			if ( !is_front_page() ) {
+				return $url;
+			}
+    	return $url .= 'https://twitter.com/'. $twitter_handle  ;
+		}
+ 
+
  
